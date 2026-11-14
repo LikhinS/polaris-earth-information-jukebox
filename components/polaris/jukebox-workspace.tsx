@@ -11,7 +11,7 @@ import { DawPanel } from './daw-panel'
 import { EarthViewport } from './earth-viewport'
 import { TopNavbar } from './top-navbar'
 
-const INITIAL_VIEW = { lon: -125, lat: 8, zoom: 1.6 }
+const INITIAL_VIEW = { lon: -125, lat: 8, zoom: 1.2 }
 
 export function JukeboxWorkspace() {
   const [datasetId, setDatasetId] = useState<DatasetId>('sst')

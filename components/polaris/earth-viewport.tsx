@@ -56,7 +56,7 @@ export function EarthViewport({
   return (
     <section
       aria-label="Earth visualization viewport"
-      className="starfield relative min-h-[420px] flex-1 overflow-hidden border-zinc-800 bg-slate-950 lg:min-h-0"
+      className="starfield relative min-h-[560px] flex-1 overflow-hidden border-zinc-800 bg-slate-950 lg:min-h-0"
     >
       <EarthCanvas
         texture={texture}
@@ -83,15 +83,15 @@ export function EarthViewport({
         <span className="absolute top-1/2 left-1/2 h-6 w-px -translate-y-1/2 bg-cyan-300/80" />
         <span className="absolute top-1/2 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-200" />
         {scanning && <span className="animate-reticle-scan absolute inset-x-0 h-0.5 bg-cyan-300 shadow-[0_0_14px_2px_rgba(34,211,238,0.8)]" />}
-        <span className="absolute -top-6 left-0 font-mono text-[10px] tracking-[0.2em] text-cyan-300/90 uppercase">
+        <span className="absolute -top-6 left-0 rounded-sm bg-slate-950/75 px-1.5 py-0.5 font-mono text-[10px] tracking-[0.2em] text-cyan-300 uppercase">
           {scanning ? 'Sampling…' : 'Sample window · 256×256 px'}
         </span>
-        <span className="absolute -bottom-6 right-0 font-mono text-[10px] tracking-widest text-cyan-300/70">
+        <span className="absolute right-0 -bottom-6 rounded-sm bg-slate-950/75 px-1.5 py-0.5 font-mono text-[10px] tracking-widest text-cyan-300/90">
           {hud.km >= 12000 ? '≈ HEMISPHERE' : `≈ ${Math.round(hud.km).toLocaleString('en-US')} KM`}
         </span>
       </div>
 
-      <div className="pointer-events-none absolute top-4 left-4 flex flex-col gap-1 font-mono text-[11px] text-slate-400">
+      <div className="pointer-events-none absolute top-4 left-4 flex flex-col gap-1 rounded-md bg-slate-950/60 p-2 font-mono text-[11px] text-slate-400">
         <span className="tracking-[0.2em] text-slate-500 uppercase">Viewport // Orthographic</span>
         <span className={cn('text-sm font-medium tracking-wide', dataset.accent.text)}>{dataset.name}</span>
         <span>

@@ -42,7 +42,7 @@ export function DatasetSidebar({ selected, onSelect }: DatasetSidebarProps) {
       <div
         role="radiogroup"
         aria-label="Select a dataset"
-        className="grid gap-3 p-3 sm:grid-cols-2 lg:flex lg:flex-1 lg:flex-col lg:overflow-y-auto"
+        className="grid gap-2.5 p-3 sm:grid-cols-2 lg:flex lg:flex-1 lg:flex-col lg:overflow-y-auto"
       >
         {DATASETS.map((ds, i) => {
           const Icon = ICONS[ds.id]
@@ -60,7 +60,7 @@ export function DatasetSidebar({ selected, onSelect }: DatasetSidebarProps) {
               onClick={() => onSelect(ds.id)}
               onKeyDown={(e) => handleKey(e, i)}
               className={cn(
-                'group flex flex-col gap-3 rounded-lg border p-3 text-left transition-all outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70',
+                'group flex flex-col gap-2.5 rounded-lg border p-3 text-left transition-all outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70',
                 active
                   ? cn(ds.accent.border, ds.accent.bg, ds.accent.glow)
                   : 'border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900',
@@ -91,10 +91,10 @@ export function DatasetSidebar({ selected, onSelect }: DatasetSidebarProps) {
                 <dd className="truncate text-right text-slate-300">{ds.source}</dd>
                 <dt className="text-slate-500">SENSOR</dt>
                 <dd className="truncate text-right text-slate-300">{ds.instrument}</dd>
-                <dt className="text-slate-500">GRID</dt>
-                <dd className="text-right text-slate-300">{ds.resolution}</dd>
-                <dt className="text-slate-500">CADENCE</dt>
-                <dd className="text-right text-slate-300">{ds.cadence}</dd>
+                <dt className="text-slate-500">SAMPLING</dt>
+                <dd className="truncate text-right text-slate-300">
+                  {ds.resolution} · {ds.cadence}
+                </dd>
               </dl>
 
               <div className="flex flex-col gap-1.5 border-t border-zinc-800 pt-2">

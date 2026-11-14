@@ -187,7 +187,8 @@ export const DATASETS: Dataset[] = [
         0.9 * blob(lat, lon, -11, -2, 6, 16) +
         0.5 * blob(lat, lon, 55, -140, 6, 16) +
         0.5 * blob(lat, lon, 60, 150, 6, 16)
-      const aod = 0.08 + (land ? fires : fires * 0.6) * texture + plumes * texture
+      const haze = 0.06 + sphereNoise(lat, lon, 3, 43, 3) * 0.32 + (land ? 0.06 : 0)
+      const aod = haze + (land ? fires : fires * 0.6) * texture + plumes * texture
       return clamp01(aod / 2)
     },
     interpret: (m) =>

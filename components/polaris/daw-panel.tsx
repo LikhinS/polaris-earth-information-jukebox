@@ -46,7 +46,7 @@ export function DawPanel({
   return (
     <section
       aria-label="Sonification workstation"
-      className="grid shrink-0 gap-4 border-t border-zinc-800 bg-zinc-950 p-4 lg:grid-cols-[13rem_minmax(0,1fr)_22rem]"
+      className="grid shrink-0 gap-4 border-t border-zinc-800 bg-zinc-950 p-4 lg:grid-cols-[12rem_minmax(0,1fr)_20rem]"
     >
       <div className="flex flex-col gap-3">
         <h2 className="font-mono text-[11px] tracking-[0.22em] text-slate-400 uppercase">Transport</h2>
@@ -101,7 +101,7 @@ export function DawPanel({
           ) : null}
         </div>
         <div className="overflow-x-auto">
-          <div className="min-w-[520px]">
+          <div className="min-w-[440px]">
             <SequencerGrid track={track} getPlayhead={getPlayhead} onToggleStep={onToggleStep} />
           </div>
         </div>
